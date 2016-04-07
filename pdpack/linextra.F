@@ -105,7 +105,9 @@ C          unpack antisymmetric,   packed (lower triangle) matrix AAP
 C              to antisymmetric, unpacked matrix AGE.
 C
 #include "implicit.h"
-      DIMENSION AAP(*), AGE(N,*)
+      DOUBLE PRECISION AAP(*), AGE(N, N)
+CF2PY INTENT(IN) AAP
+CF2PY INTENT(OUT) AGE
 C
 #include "nosync.h"
       DO 200 J = 1,N
@@ -133,10 +135,9 @@ C              to symmetric, unpacked matrix ASI.
 C
 #include "implicit.h"
       DOUBLE PRECISION ASP(*), ASI(N, N)
-C
-CF2PY INTENT(OUT) ASI
 CF2PY INTENT(IN) ASP
-      !ENTRY      DSPTGE(N,ASP,ASI)
+CF2PY INTENT(OUT) ASI
+      ENTRY      DSPTGE(N,ASP,ASI)
 C     ... equivalent subroutine name
 C
 #include "nosync.h"
