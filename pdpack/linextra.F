@@ -122,8 +122,7 @@ C
       RETURN
       END
 C  /* Deck dsptsi */
-      !SUBROUTINE DSPTSI(N,ASP,ASI)
-      SUBROUTINE DSPTSI(ASI, ASP, N)
+      SUBROUTINE DSPTSI(N,ASP,ASI)
 C
 C  8-Feb-1987 Hans Joergen Aa. Jensen
 C  900720-hjaaj: inserted NOSYNC directive.
@@ -135,7 +134,7 @@ C
 #include "implicit.h"
       DOUBLE PRECISION ASP(*), ASI(N, N)
 C
-CF2PY INTENT(IN, OUT) ASI
+CF2PY INTENT(OUT) ASI
 CF2PY INTENT(IN) ASP
       !ENTRY      DSPTGE(N,ASP,ASI)
 C     ... equivalent subroutine name
