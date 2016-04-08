@@ -19,8 +19,6 @@ before_install:
   - conda update --yes conda
 install:
   - conda install --yes python=$TRAVIS_PYTHON_VERSION pip numpy scipy nose mock
-  - pip install pep8 python-coveralls
+  - make install
 script:
-  - nosetests --with-coverage --cover-package pdpack
-after_success:
-  - coveralls
+  - python -m nose
