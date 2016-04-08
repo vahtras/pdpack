@@ -19,8 +19,8 @@ before_install:
   - conda update --yes conda
 install:
   - conda install --yes python=$TRAVIS_PYTHON_VERSION pip numpy scipy nose mock
-  - conda remove libgfortran
-  - conda install libgcc --force
+  - conda remove --yes libgfortran
+  - conda install --yes libgcc --force
   - make install
 script:
   - python -m nose
